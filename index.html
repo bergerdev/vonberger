@@ -12,30 +12,39 @@
   font-family: 'Deftone';
   src: url('DEFTONE.ttf');
   }
+  :root {
+    --iconmargin: 2em;
+    --socialiconwidth: 3em;
+    --platformiconwidth: 4em;
+    --h1fontsize: 6em;
+    --pfontsize: 3em;
+    }
   body {
     background-color: black; color: white;
   }
   h1 {
   font-family: 'Deftone';
   text-align: center;
-  font-size: 6em;
+  font-size: var(--h1fontsize);
   font-weight: unset;
   }
   p {
   font-family: 'Barlow Condensed';
   font-weight: 300;
+  font-size: var(--pfontsize);
+  padding: 1vw;
   }
   .platformicons {
-    width: 4em;
+    width: var(--platformiconwidth);
     display: inline-block;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: var(--iconmargin);
+    margin-right: var(--iconmargin);
   }
   .socialicons {
-    width: 3em;
+    width: var(--socialiconwidth);
     display: inline-block;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: var(--iconmargin);
+    margin-right: var(--iconmargin);
   }
   .grid-container {
   display: grid;
@@ -49,6 +58,15 @@
   align-items:center; /* align vertical */
   /* border: 1px solid rgba(255, 255, 255, 0.8); */
   }
+  @media screen and (max-device-aspect-ratio: 1/1) {
+    :root {
+    --iconmargin: calc(2em + 1vw);
+    --socialiconwidth: calc(3em + 2vmax);
+    --platformiconwidth: calc(4em + 2vmax);
+    --h1fontsize: calc(6em + 2.5vmax);
+    --pfontsize: calc(3em + 1vmax);
+    }
+  }
   </style>
 </head>
 <body>
@@ -60,7 +78,7 @@
   </div>
 
   <div data-aos="zoom-in" data-aos-delay="400" class="grid-item">
-    <p style="text-align: center;font-size: 3em;font-style: italic;">Run Run Ramona dropping September 16th<br>Two more singles in October</p>
+    <p style="text-align: center;font-style: italic;">Run Run Ramona dropping September 16th<br>Two more singles in October</p>
   </div>
 
   <div class="grid-item">
